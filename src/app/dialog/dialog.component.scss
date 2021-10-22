@@ -1,0 +1,33 @@
+.dialog {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+
+  &__show {
+    display: inline;
+  }
+
+  &__content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 5px 2px 10px 5px #00000042;
+    border: 1px solid #888;
+    width: 40%;
+    animation-name: fadeDialog;
+    animation-duration: 0.3s;
+  }
+}
+
+@keyframes fadeDialog {
+  0%   {transform: scale(0.5)}
+  100% {transform: scale(1)}
+}
