@@ -13,8 +13,7 @@ export class DialogComponent implements OnInit, AfterViewInit {
 
   @HostListener('click', ['$event.target']) public onClick(targetElement: HTMLElement) {
     if (targetElement.classList.value === "dialog dialog__show") {
-      this.modalContent.clear();
-      this.component = null;
+      this.close();
     }
   }
 
@@ -35,6 +34,10 @@ export class DialogComponent implements OnInit, AfterViewInit {
         this.dialog.setCurrentRef(componentRef);      
       }
     });
+
+    this.dialog.dialogContentClose.subscribe((closed: boolean) => {
+      if (closed) this.close();
+    });
   }
 
   ngOnInit(): void {
@@ -43,6 +46,11 @@ export class DialogComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
    
+  }
+ 
+  close() {
+    this.modalContent.clear();
+    this.component = null;
   }
 
 }

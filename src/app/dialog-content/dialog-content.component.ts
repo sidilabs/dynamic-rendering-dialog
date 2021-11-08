@@ -8,7 +8,7 @@ import { DialogService } from '../services/dialog.service';
 })
 export class DialogContentComponent implements OnInit {
 
-  @Output() emitirEvento = new EventEmitter();
+  @Output() testEvent = new EventEmitter();
 
   constructor(
     private dialog: DialogService
@@ -17,9 +17,8 @@ export class DialogContentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  test() {
-    this.emitirEvento.emit('test');
-    
+  dispatchEvent() {
+    this.testEvent.emit('Event was dispatched!');
   }
 
   close() {

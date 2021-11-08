@@ -1,3 +1,15 @@
-<p>dialog-content works!</p>
-<button (click)="test()">test</button>
-<span (click)="close()">&times;</span>
+<div class="header"> 
+    <div class="close">
+        <span (click)="close()" class="material-icons">close</span>
+    </div>
+    <h2>External Content</h2>
+</div>
+
+<div class="body">
+    <button (click)="dispatchEvent()">Dispatch Event</button>
+    <h1>H1</h1>
+    <h2>H2</h2>
+    <h3>H3</h3>
+    <h4>H4</h4>
+    <h5>H5</h5>
+</div>

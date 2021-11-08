@@ -1,5 +1,5 @@
 <div class="dialog" [ngClass]="{ dialog__show: component }">
-  <div class="dialog__content">
+  <div class="dialog__content" [ngStyle]="{width: options ? options.width : ''}">
     <ng-container #modalContent></ng-container>
   </div>
 </div>

@@ -21,12 +21,12 @@ export class AppComponent {
       }
     );
 
-    componentRef.instance.emitirEvento.subscribe((res: any) => {
+    componentRef.instance.testEvent.subscribe((res: any) => {
       console.log(res)
     });
 
     componentRef.onDestroy(()=> {
-      console.log('destruiu')
+      console.log('Dialog was destroyed!')
     })
   }
 }

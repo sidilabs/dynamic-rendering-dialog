@@ -9,6 +9,9 @@ export class DialogService {
   public dialogContentSource = new BehaviorSubject<any>(null);   
   dialogContent = this.dialogContentSource.asObservable();
 
+  public dialogContentCloseSource = new BehaviorSubject<boolean>(false);   
+  dialogContentClose = this.dialogContentCloseSource.asObservable();
+
   dialogReference: any;
 
   constructor() { }
@@ -24,6 +27,6 @@ export class DialogService {
   }
 
   close() {
-    this.dialogContentSource.next(null);
+    this.dialogContentCloseSource.next(true);
   }
 }
